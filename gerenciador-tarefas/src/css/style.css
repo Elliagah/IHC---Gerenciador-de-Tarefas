@@ -1,59 +1,166 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fb;
     margin: 0;
-    padding: 20px;
-}
-
-h1 {
-    color: #333;
+    padding: 0;
 }
 
 .container {
     max-width: 600px;
-    margin: auto;
+    margin: 40px auto;
     background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 24px;
 }
 
-.task-list {
-    list-style-type: none;
-    padding: 0;
+h1 {
+    text-align: center;
+    color: #2d3a4b;
+    margin-bottom: 32px;
 }
 
-.task-list li {
+input[type="text"], input[type="date"], select {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    margin: 8px 4px 8px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s;
 }
 
-.task-list li:last-child {
-    border-bottom: none;
+input[type="text"]:focus, input[type="date"]:focus, select:focus {
+    border: 1.5px solid #007bff;
 }
 
 button {
-    background-color: #28a745;
-    color: white;
+    padding: 10px 18px;
+    background: #007bff;
+    color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background 0.2s;
+    margin-left: 4px;
 }
 
 button:hover {
-    background-color: #218838;
+    background: #0056b3;
 }
 
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    border: 1px solid #405ddf;
-    border-radius: 5px;
-    margin-bottom: 10px;
+ul#lista-tarefas {
+    list-style: none;
+    padding: 0;
+    margin-top: 24px;
 }
 
-.task-list button,
-#lista-tarefas button {
-    margin-left: 50px;
+ul#lista-tarefas li {
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 14px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.urgency {
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.urgente {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.pouco-urgente {
+    background-color: #28a745;
+    color: white;
+}
+
+.nao-urgente {
+    background-color: #007bff;
+    color: white;
+}
+
+.task-date {
+    margin-left: 10px;
+    font-style: italic;
+    color: #555;
+    font-size: 13px;
+}
+
+#calendario {
+    margin: 40px auto 0 auto;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 24px;
+}
+
+#btn-referencias {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+    transition: background 0.2s;
+}
+
+#btn-referencias:hover {
+    background: #0056b3;
+}
+
+.modal-referencias {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 32px 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    position: relative;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.fechar-modal:hover {
+    color: #007bff;
 }

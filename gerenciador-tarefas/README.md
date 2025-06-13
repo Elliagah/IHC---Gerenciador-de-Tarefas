@@ -40,7 +40,3 @@ gerenciador-tarefas
 ## Contribuição
 
 Sinta-se à vontade para contribuir com melhorias ou correções. Basta abrir um pull request com suas alterações.
-
-## Licença
-
-Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mais detalhes.
